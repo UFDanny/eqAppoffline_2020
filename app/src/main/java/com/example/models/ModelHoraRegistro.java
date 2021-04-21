@@ -1,9 +1,9 @@
-package com.example.elements;
+package com.example.models;
 
 import java.util.Date;
 import java.sql.Time;
 
-public class RegistroHora {
+public class ModelHoraRegistro {
     private int id;
     private Date date;
     private Time hora_inicio;
@@ -12,7 +12,7 @@ public class RegistroHora {
     private int valor_planeado;
     private int valor_real;
 
-    public RegistroHora(int id, Date date, Time hora_inicio, Time hora_fin, int product_id, int valor_planeado, int valor_real) {
+    public ModelHoraRegistro(int id, Date date, Time hora_inicio, Time hora_fin, int product_id, int valor_planeado, int valor_real) {
         this.id = id;
         this.date = date;
         this.hora_inicio = hora_inicio;

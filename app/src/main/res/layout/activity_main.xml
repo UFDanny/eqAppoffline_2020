@@ -1,18 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#DAE6E5"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/btnproducto"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:height="60dp"
+        android:drawableTop="@drawable/producto"
+        android:padding="5dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="#5B956A"
+        android:text="@string/menuproducto"
+        android:textColor="#fff"
+        android:onClick="runProducto"
+        android:textSize="20dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnhora"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:height="60dp"
+        android:drawableTop="@drawable/hora_hora"
+        android:padding="5dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="#1978AA"
+        android:text="@string/menuhora"
+        android:textColor="#fff"
+        android:onClick="runRegistro"
+        android:textSize="20dp"/>
+
+</LinearLayout>

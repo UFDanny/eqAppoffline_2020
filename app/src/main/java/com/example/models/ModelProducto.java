@@ -1,8 +1,8 @@
-package com.example.elements;
+package com.example.models;
 
 import java.sql.Time;
 
-public class Producto {
+public class ModelProducto {
     private int id;
     private String name;
     private String descripcion;
@@ -10,7 +10,7 @@ public class Producto {
     private Time time_produccion;
     private int status;
 
-    public Producto(int id, String name, String descripcion, int cantidad_produccion, Time time_produccion, int status) {
+    public ModelProducto(int id, String name, String descripcion, int cantidad_produccion, Time time_produccion, int status) {
         this.id = id;
         this.name = name;
         this.descripcion = descripcion;
