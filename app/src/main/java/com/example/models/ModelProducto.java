@@ -1,5 +1,7 @@
 package com.example.models;
 
+import androidx.annotation.NonNull;
+
 import java.sql.Time;
 
 public class ModelProducto {
@@ -65,5 +67,10 @@ public class ModelProducto {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return (this.name +"\n"+this.status);
     }
 }

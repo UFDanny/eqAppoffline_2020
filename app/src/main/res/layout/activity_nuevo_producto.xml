@@ -26,14 +26,20 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:hint="Nombre"
+                android:drawableLeft="@drawable/product"
+                android:drawablePadding="5dp"
+                android:drawableStart="@drawable/product"
                 android:layout_margin="5dp"
-                android:inputType="time"/>
+                android:inputType="text"/>
 
             <EditText
                 android:id="@+id/cantidad_nuevo_producto"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_margin="5dp"
+                android:drawableLeft="@drawable/cantidadproducto"
+                android:drawablePadding="5dp"
+                android:drawableStart="@drawable/cantidadproducto"
                 android:hint="Cantidad Producción"
                 android:inputType="number"/>
 
@@ -42,6 +48,9 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_margin="5dp"
+                android:drawableLeft="@drawable/statusproducto"
+                android:drawablePadding="5dp"
+                android:drawableStart="@drawable/statusproducto"
                 android:hint="Status"
                 android:inputType="number"/>
 
@@ -50,6 +59,12 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_margin="5dp"
+                android:drawableLeft="@drawable/timeproduct"
+                android:drawablePadding="5dp"
+                android:drawableStart="@drawable/timeproduct"
+                android:focusable="false"
+                android:clickable="true"
+                android:onClick="dialogTime"
                 android:hint="Time"
                 android:inputType="number"/>
 
@@ -67,6 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:text="Guardar "
+                android:onClick="clickGuardar"
                 android:layout_alignParentBottom="true"
                 android:background="#03A9F4"
                 android:textColor="#fff"/>

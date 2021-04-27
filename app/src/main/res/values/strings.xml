@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GestionPerdidas</string>
+    <string name="app_name">Gestión Perdidas</string>
     <string name="menuproducto">PRODUCTO</string>
     <string name="menuhora">PLANIFICACIÓN</string>
 </resources>

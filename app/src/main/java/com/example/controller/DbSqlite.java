@@ -8,7 +8,46 @@ import androidx.annotation.Nullable;
 
 public class DbSqlite extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "gestion";
+    public static final String DATABASE_NAME = "gestion.db";
+
+    //tabla producto
+    public static final String TABLE_PRODUCTO = "producto";
+    public static final String TBPROD_COL_ID = "id_producto";
+    public static final String TBPROD_COL_NOMBRE = "nombre";
+    public static final String TBPROD_COL_CANTIDAD = "cantidad_produccion";
+    public static final String TBPROD_COL_STATUS = "status";
+    public static final String TBPROD_COL_TIME = "time_produccion";
+    public static final String TBPROD_COL_DESCRIPCION = "descripcion";
+
+    //tabla registro hora-hora
+    public static final String TABLE_REGISTRO_HORA = "registro_hora";
+    public static final String TBREG_COL_ID = "id";
+    public static final String TBREG_COL_DATE = "date";
+    public static final String TBREG_COL_HORAINICIO = "hora_inicio";
+    public static final String TBREG_COL_HORAFIN = "hora_fin";
+    public static final String TBREG_COL_PRODUCTO = "id_producto";
+    public static final String TBREG_COL_VALPLANEADO = "valor_planeado";
+    public static final String TBREG_COL_VALREAL = "valor_real";
+
+    //sintaxis para crear la tabla producto
+    static final String CreateTableProduct = "Create Table IF NOT EXISTS " +TABLE_PRODUCTO + "("
+            +TBPROD_COL_ID +" Integer PRIMARY KEY AUTOINCREMENT,"
+            + TBPROD_COL_NOMBRE + " text,"
+            + TBPROD_COL_DESCRIPCION + " longtext,"
+            + TBPROD_COL_CANTIDAD + " integer,"
+            + TBPROD_COL_TIME + " time,"
+            + TBPROD_COL_STATUS + " integer)";
+
+    //sintaxis para crear la tabla registro
+    static final String CreateTableRegistro = "Create Table IF NOT EXISTS " +TABLE_REGISTRO_HORA + "("
+            + TBREG_COL_ID +" Integer PRIMARY KEY AUTOINCREMENT,"
+            + TBREG_COL_DATE +" date,"
+            + TBREG_COL_HORAINICIO +" time,"
+            + TBREG_COL_HORAFIN +" time,"
+            + TBREG_COL_PRODUCTO +" integer,"
+            + TBREG_COL_VALPLANEADO +" integer,"
+            + TBREG_COL_VALREAL + " integer)";
+
 
     public DbSqlite(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -16,12 +55,14 @@ public class DbSqlite extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        //db.execSQL(SQL_CREATE_ENTRIES);
+        db.execSQL(CreateTableProduct);
+        db.execSQL(CreateTableRegistro);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        //db.execSQL(SQL_DELETE_ENTRIES);
+        db.execSQL("Drop table IF EXISTS "+ TABLE_PRODUCTO);
+        db.execSQL("Drop table IF EXISTS "+ TABLE_REGISTRO_HORA);
         onCreate(db);
     }
 }

@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Productos">
+    tools:context=".Productos"
+    android:background="#C7DFDD"
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/btnnuevoproducto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Crear Producto"
+        android:layout_margin="5dp"
         android:background="#61BAB2"
         android:onClick="runNuevoProducto"
         android:textColor="#fff"/>
 
+    <ListView
+        android:id="@+id/ListViewProducto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:divider="@color/material_blue_grey_800"
+        android:dividerHeight="1dp" >
 
+    </ListView>
 
 
 </LinearLayout>

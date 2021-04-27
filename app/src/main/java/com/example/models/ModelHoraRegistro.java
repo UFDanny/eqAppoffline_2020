@@ -1,5 +1,7 @@
 package com.example.models;
 
+import androidx.annotation.NonNull;
+
 import java.util.Date;
 import java.sql.Time;
 
@@ -76,5 +78,10 @@ public class ModelHoraRegistro {
 
     public void setValor_real(int valor_real) {
         this.valor_real = valor_real;
+    }
+
+    @Override
+    public String toString() {
+        return (this.date+"\n"+this.hora_inicio+" - "+this.hora_fin+"\n Producto:"+this.product_id);
     }
 }
