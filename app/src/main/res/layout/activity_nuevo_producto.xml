@@ -16,6 +16,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="Nuevo Producto"
                 android:textAlignment="center"
                 android:textSize="20dp"
@@ -66,7 +67,7 @@
                 android:clickable="true"
                 android:onClick="dialogTime"
                 android:hint="Time"
-                android:inputType="number"/>
+                android:inputType="time"/>
 
             <EditText
                 android:id="@+id/descripcion_nuevo_producto"

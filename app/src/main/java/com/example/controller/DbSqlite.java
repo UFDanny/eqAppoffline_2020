@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 public class DbSqlite extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "gestion.db";
+    private final Context contexto;
 
     //tabla producto
     public static final String TABLE_PRODUCTO = "producto";
@@ -30,27 +31,27 @@ public class DbSqlite extends SQLiteOpenHelper {
     public static final String TBREG_COL_VALREAL = "valor_real";
 
     //sintaxis para crear la tabla producto
-    static final String CreateTableProduct = "Create Table IF NOT EXISTS " +TABLE_PRODUCTO + "("
-            +TBPROD_COL_ID +" Integer PRIMARY KEY AUTOINCREMENT,"
+    static final String CreateTableProduct = "Create Table IF NOT EXISTS " +TABLE_PRODUCTO + " ("
+            + TBPROD_COL_ID +" Integer PRIMARY KEY AUTOINCREMENT,"
             + TBPROD_COL_NOMBRE + " text,"
-            + TBPROD_COL_DESCRIPCION + " longtext,"
+            + TBPROD_COL_DESCRIPCION + " text,"
             + TBPROD_COL_CANTIDAD + " integer,"
-            + TBPROD_COL_TIME + " time,"
+            + TBPROD_COL_TIME + " text,"
             + TBPROD_COL_STATUS + " integer)";
 
     //sintaxis para crear la tabla registro
-    static final String CreateTableRegistro = "Create Table IF NOT EXISTS " +TABLE_REGISTRO_HORA + "("
+    static final String CreateTableRegistro = "Create Table IF NOT EXISTS " +TABLE_REGISTRO_HORA + " ("
             + TBREG_COL_ID +" Integer PRIMARY KEY AUTOINCREMENT,"
-            + TBREG_COL_DATE +" date,"
-            + TBREG_COL_HORAINICIO +" time,"
-            + TBREG_COL_HORAFIN +" time,"
+            + TBREG_COL_DATE +" Date,"
+            + TBREG_COL_HORAINICIO +" text,"
+            + TBREG_COL_HORAFIN +" text,"
             + TBREG_COL_PRODUCTO +" integer,"
             + TBREG_COL_VALPLANEADO +" integer,"
             + TBREG_COL_VALREAL + " integer)";
 
-
     public DbSqlite(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.contexto = context;
     }
 
     @Override

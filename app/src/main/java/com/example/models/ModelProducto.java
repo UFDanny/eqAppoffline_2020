@@ -71,6 +71,6 @@ public class ModelProducto {
 
     @Override
     public String toString() {
-        return (this.name +"\n"+this.status);
+        return (this.name);
     }
 }

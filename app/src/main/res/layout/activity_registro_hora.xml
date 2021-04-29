@@ -8,15 +8,23 @@
     android:background="#B8D2DD"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnnuevoregistro"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarregistro"
         android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="20dp"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:title="Registro Hora"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        tools:ignore="UnusedAttribute"/>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchViewregistro"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nuevo Registro"
-        android:layout_margin="5dp"
-        android:background="#427DAC"
-        android:onClick="runNuevoRegistro"
-        android:textColor="#fff"/>
+        android:iconifiedByDefault="true"
+        android:queryHint="Buscar" />
 
     <ListView
         android:id="@+id/ListViewRegistroHora"

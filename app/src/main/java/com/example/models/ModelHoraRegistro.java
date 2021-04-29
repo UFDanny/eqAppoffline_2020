@@ -2,7 +2,7 @@ package com.example.models;
 
 import androidx.annotation.NonNull;
 
-import java.util.Date;
+import java.sql.Date;
 import java.sql.Time;
 
 public class ModelHoraRegistro {
